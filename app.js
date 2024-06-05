@@ -9,7 +9,6 @@
 //     window.alert("Miss. " + name);
 // }
 // else{
-//     //window.prompt("Entefffffffffffffff:" +"");
 // while(gender!="Male" || gender!="Female"){
 //     window.prompt("Enter your Gender:" +"Male Or Female");
 //     if(gender == "Male")
@@ -73,3 +72,41 @@
 //     n=n+i;
 // }
 // window.alert(n);
+
+
+function genderr(){
+    let name = window.prompt("Enter your Name:", "");
+    let gender = window.prompt("Enter your Gender:", "Male or Female").toLowerCase(); // Convert input to lowercase for case insensitivity
+    console.log(gender);
+
+    if (gender === "male"){
+        window.alert("Mr. " + name);
+    }
+    else if(gender === "female"){
+        window.alert("Miss. " + name);
+    }
+    else{
+        while(gender !== "male" && gender !== "female"){ // Fixing the condition
+            gender = window.prompt("Enter your Gender: Male or Female").toLowerCase(); // Prompt again until valid input
+            if(gender === "male"){
+                window.alert("Mr. " + name);
+            }
+            else if (gender === "female"){ // Corrected if-else statement
+                window.alert("Miss. " + name);
+            }
+        }
+    }
+
+    window.alert("Do you want to order Donut or Coffee or Ice Cream or Bakery?? ");
+    let order = window.prompt("Write the name of your order: Donut or Coffee or Ice Cream or Bakery");
+    window.alert("Your order is being prepared. ");
+    console.log(name + " ordered " + order);
+
+    const array = [name, gender, order]; // Initialize array directly
+
+    for(let j=0; j < array.length; j++){ // Fixing the loop condition
+        console.log(array[j]);
+    }
+}
+
+genderr(); // Call the function directly
