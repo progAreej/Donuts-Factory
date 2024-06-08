@@ -37,7 +37,7 @@
 // }
 
 
-// Question 7
+// // Question 7
 
 // for(let i=0;i<=5;i++){
 //     window.alert(i);
@@ -45,27 +45,27 @@
 
 
 // // Question 8
-// const num=[];
+// const num1=[];
 // for(let i=0;i<=5;i++){
-//      num.push(i+" ");
+//      num1.push(i+" ");
 //         }
-// window.alert(num);
+// window.alert(num1);
     
-// Question 9
-// const num=[];
+// // Question 9
+// const num2=[];
 // for(let i=0;i<=20;i+=3){
-//      num.push(i+" ");
+//      num2.push(i+" ");
 //         }
-// window.alert(num);
+// window.alert(num2);
 
-// Question 10
+// // Question 10
 
-// let NuM=window.prompt("Enter number from 1 to 100","");
-// while(NuM<0 || NuM>100){
+// let NuMm=window.prompt("Enter number from 1 to 100","");
+// while(NuMm<0 || NuMm>100){
 //     window.alert("Error number you should enter number from 0 to 100!!!");
 // }
 
-// Question 11
+// // Question 11
 // let NuM=window.prompt("Enter number from 1 to 100","");
 // let n=0;
 // for(let i=0;i<=NuM;i++){
@@ -73,25 +73,21 @@
 // }
 // window.alert(n);
 
-
-function genderr(){
-    let name = window.prompt("Enter your Name:", "");
-    let gender = window.prompt("Enter your Gender:", "Male or Female").toLowerCase(); // Convert input to lowercase for case insensitivity
+function genderr() {
+    var name = window.prompt("Enter your Name:", "");
+    let gender = window.prompt("Enter your Gender:", "Male or Female").toLowerCase(); 
     console.log(gender);
 
-    if (gender === "male"){
+    if (gender === "male") {
         window.alert("Mr. " + name);
-    }
-    else if(gender === "female"){
+    } else if (gender === "female") {
         window.alert("Miss. " + name);
-    }
-    else{
-        while(gender !== "male" && gender !== "female"){ // Fixing the condition
-            gender = window.prompt("Enter your Gender: Male or Female").toLowerCase(); // Prompt again until valid input
-            if(gender === "male"){
+    } else {
+        while (gender !== "male" && gender !== "female") { 
+            gender = window.prompt("Enter your Gender: Male or Female").toLowerCase(); 
+            if (gender === "male") {
                 window.alert("Mr. " + name);
-            }
-            else if (gender === "female"){ // Corrected if-else statement
+            } else if (gender === "female") { 
                 window.alert("Miss. " + name);
             }
         }
@@ -102,11 +98,27 @@ function genderr(){
     window.alert("Your order is being prepared. ");
     console.log(name + " ordered " + order);
 
-    const array = [name, gender, order]; // Initialize array directly
+    const array = [name, gender, order];
 
-    for(let j=0; j < array.length; j++){ // Fixing the loop condition
-        console.log(array[j]);
-    }
+    // DOM manipulation
+    const divv = document.getElementById("newDiv");
+    divv.style.backgroundColor = "red";
+    divv.style.textAlign = "center";
+    divv.style.height = "200px";
+    let para = document.createElement("p");
+    para.innerText = "Name: " + name;
+    divv.appendChild(para);
+
+    let orderList = document.createElement("ol");
+    divv.appendChild(orderList);
+
+    let list1 = document.createElement("li");
+    list1.innerText = "Gender: " + gender;
+    orderList.appendChild(list1);
+
+    let list2 = document.createElement("li");
+    list2.innerText = "Order: " + order;
+    orderList.appendChild(list2);
 }
 
-genderr(); // Call the function directly
+genderr(); 
